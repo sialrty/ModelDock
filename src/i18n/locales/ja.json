@@ -777,6 +777,8 @@
     "upToDate": "最新バージョンです",
     "aboutHint": "バージョン情報とローカルツールの状態を表示します。",
     "exclusiveSponsor": "唯一のスポンサー",
+    "sponsorDescription": "ネイティブモデル、透明なルーティング、明確な AI API 課金。",
+    "visitSponsor": "flaredeep.cn を開く",
     "portableMode": "ポータブルモード: 更新は手動ダウンロードが必要です。",
     "updateAvailable": "新しいバージョンがあります: {{version}}",
     "updateBadge": "更新あり",

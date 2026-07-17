@@ -39,13 +39,6 @@ dependencies:
           - "src-tauri/Cargo.toml"
           - "src-tauri/Cargo.lock"
 
-documentation:
-  - changed-files:
-      - any-glob-to-any-file:
-          - "*.md"
-          - "docs/**"
-          - "LICENSE"
-
 mcp:
   - changed-files:
       - any-glob-to-any-file:

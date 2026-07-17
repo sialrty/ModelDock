@@ -779,27 +779,36 @@ export function AboutSection({ isPortable }: AboutSectionProps) {
               </div>
             </div>
           </div>
-          <Button
-            type="button"
-            variant="outline"
-            className="h-auto min-w-[210px] justify-start gap-3 px-3 py-2.5"
-            onClick={() => void openSponsor()}
-          >
-            <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-md bg-teal-500 text-sm font-bold text-white">
-              F
-            </span>
-            <span className="min-w-0 flex-1 text-left">
-              <span className="block text-[11px] font-normal text-muted-foreground">
-                {t("settings.exclusiveSponsor")}
-              </span>
-              <span className="block truncate text-sm font-semibold">
-                FlareDeep
-              </span>
-            </span>
-            <ExternalLink className="h-3.5 w-3.5 shrink-0 text-muted-foreground" />
-          </Button>
         </div>
       </motion.div>
+
+      <motion.button
+        type="button"
+        initial={{ opacity: 0, y: 8 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.3, delay: 0.15 }}
+        className="group flex w-full flex-col gap-4 rounded-lg border border-teal-500/30 bg-teal-500/10 px-5 py-4 text-left transition-colors hover:border-teal-500/50 hover:bg-teal-500/15 sm:flex-row sm:items-center"
+        onClick={() => void openSponsor()}
+      >
+        <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-teal-500 text-xl font-bold text-white shadow-sm">
+          F
+        </span>
+        <span className="min-w-0 flex-1">
+          <span className="block text-xs font-semibold text-teal-700 dark:text-teal-300">
+            {t("settings.exclusiveSponsor")}
+          </span>
+          <span className="mt-0.5 block text-lg font-semibold text-foreground">
+            FlareDeep
+          </span>
+          <span className="mt-1 block text-xs leading-relaxed text-muted-foreground">
+            {t("settings.sponsorDescription")}
+          </span>
+        </span>
+        <span className="flex shrink-0 items-center gap-1.5 text-xs font-medium text-teal-700 dark:text-teal-300">
+          {t("settings.visitSponsor")}
+          <ExternalLink className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
+        </span>
+      </motion.button>
 
       <div className="space-y-3">
         <div className="flex flex-col gap-2 px-1 sm:flex-row sm:items-center sm:justify-between">

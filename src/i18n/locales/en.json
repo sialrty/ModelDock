@@ -777,6 +777,8 @@
     "upToDate": "Up to Date",
     "aboutHint": "View version information and local tool status.",
     "exclusiveSponsor": "Exclusive sponsor",
+    "sponsorDescription": "Native upstream models, transparent routing, and clear AI API billing.",
+    "visitSponsor": "Visit flaredeep.cn",
     "portableMode": "Portable mode: updates require manual download.",
     "updateAvailable": "New version available: {{version}}",
     "updateBadge": "Update available",

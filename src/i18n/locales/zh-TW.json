@@ -777,6 +777,8 @@
     "upToDate": "已是最新",
     "aboutHint": "檢視版本資訊與本機工具狀態。",
     "exclusiveSponsor": "唯一贊助商",
+    "sponsorDescription": "堅持原生上游、如實路由與透明計費的 AI API Gateway。",
+    "visitSponsor": "造訪 flaredeep.cn",
     "portableMode": "目前為可攜版，更新需手動下載。",
     "updateAvailable": "檢測到新版本：{{version}}",
     "updateBadge": "有更新可用",
