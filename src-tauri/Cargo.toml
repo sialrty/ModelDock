@@ -1,6 +1,6 @@
 [package]
 name = "modeldock"
-version = "3.17.0"
+version = "3.17.1"
 description = "Local provider manager for AI coding tools"
 authors = ["Jason Young"]
 license = "MIT"
