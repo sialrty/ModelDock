@@ -20,7 +20,6 @@ CC Switch is an open-source project maintained by volunteers. We're happy to hel
 
 - **Bug reports**: [Open a Bug Report](https://github.com/farion1231/cc-switch/issues/new?template=bug_report.yml)
 - **Documentation issues**: [Open a Doc Issue](https://github.com/farion1231/cc-switch/issues/new?template=doc_issue.yml)
-- **Security vulnerabilities**: Please do NOT use public issues. See our [Security Policy](./SECURITY.md).
 
 ### Feature Requests
 
@@ -51,7 +50,6 @@ CC Switch 是一个由志愿者维护的开源项目。我们很乐意提供帮�
 
 - **Bug 报告**：[提交 Bug 报告](https://github.com/farion1231/cc-switch/issues/new?template=bug_report.yml)
 - **文档问题**：[提交文档问题](https://github.com/farion1231/cc-switch/issues/new?template=doc_issue.yml)
-- **安全漏洞**：请不要使用公开 Issue。请参阅我们的[安全策略](./SECURITY.md)。
 
 ### 功能请求
 

@@ -1,3 +1,7 @@
+# Third-Party Notices
+
+This project includes code originally distributed under the following terms:
+
 MIT License
 
 Copyright (c) 2025 Jason Young

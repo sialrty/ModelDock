@@ -29,7 +29,3 @@ pnpm typecheck
 pnpm test:unit
 pnpm build
 ```
-
-## Lizenz
-
-ModelDock wird unter der MIT License vertrieben. Die urspruenglichen Urheberrechts- und Lizenzhinweise bleiben in [LICENSE](LICENSE) erhalten.

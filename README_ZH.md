@@ -29,7 +29,3 @@ pnpm typecheck
 pnpm test:unit
 pnpm build
 ```
-
-## 许可证
-
-ModelDock 使用 MIT 许可证分发，原始版权与许可证声明保留在 [LICENSE](LICENSE) 中。
