@@ -11,6 +11,7 @@ import {
   ArrowUpCircle,
   ChevronDown,
   Stethoscope,
+  ExternalLink,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
@@ -204,6 +205,14 @@ function mergeToolVersions(
 export function AboutSection({ isPortable }: AboutSectionProps) {
   // ... (use hooks as before) ...
   const { t } = useTranslation();
+  const openSponsor = useCallback(async () => {
+    try {
+      await settingsApi.openExternal("https://flaredeep.cn");
+    } catch (error) {
+      console.error("[AboutSection] Failed to open sponsor website", error);
+      toast.error(t("common.openLinkFailed"));
+    }
+  }, [t]);
   // 惰性初始化自模块缓存：重挂时首帧即渲染上次的值，避免 loading 闪烁；首次挂载缓存
   // 为空则回退到原始初值（null / loading）。
   const [version, setVersion] = useState<string | null>(() => appVersionCache);
@@ -770,7 +779,25 @@ export function AboutSection({ isPortable }: AboutSectionProps) {
               </div>
             </div>
           </div>
-
+          <Button
+            type="button"
+            variant="outline"
+            className="h-auto min-w-[210px] justify-start gap-3 px-3 py-2.5"
+            onClick={() => void openSponsor()}
+          >
+            <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-md bg-teal-500 text-sm font-bold text-white">
+              F
+            </span>
+            <span className="min-w-0 flex-1 text-left">
+              <span className="block text-[11px] font-normal text-muted-foreground">
+                {t("settings.exclusiveSponsor")}
+              </span>
+              <span className="block truncate text-sm font-semibold">
+                FlareDeep
+              </span>
+            </span>
+            <ExternalLink className="h-3.5 w-3.5 shrink-0 text-muted-foreground" />
+          </Button>
         </div>
       </motion.div>
 

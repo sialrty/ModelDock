@@ -10,7 +10,13 @@ ModelDock is a cross-platform desktop application for managing provider configur
 - MCP, prompts, skills, session, and usage management
 - Windows, macOS, and Linux support through Tauri 2
 
-This distribution does not show partner promotions, does not link to an upstream project website from the application, and does not include application self-update functionality. Provider presets and normal provider configuration features remain available.
+## Downloads
+
+Download installers for Windows, macOS, and Linux from [GitHub Releases](https://github.com/sialrty/ModelDock/releases).
+
+## Exclusive Sponsor
+
+[FlareDeep](https://flaredeep.cn) is the exclusive sponsor of ModelDock. FlareDeep provides an AI API gateway focused on native upstream models, transparent routing, and clear billing.
 
 ## Development
 

@@ -1,5 +1,35 @@
 # ModelDock
 
-ModelDock is a cross-platform desktop provider configuration manager for AI coding tools. This distribution contains no partner promotion UI, upstream project links in the application, or application self-update feature.
+ModelDock ist eine plattformuebergreifende Desktop-Anwendung zur Verwaltung von Provider-Konfigurationen fuer Claude Code, Claude Desktop, Codex, Gemini CLI, OpenCode, OpenClaw und Hermes.
 
-See [README.md](README.md) for features and build instructions. The original copyright and MIT license notices are retained in [LICENSE](LICENSE).
+## Funktionen
+
+- Grafische Verwaltung von Providern und Profilen
+- Wechsel mit einem Klick und lokalen Sicherungen
+- Lokales Routing und Failover
+- Verwaltung von MCP, Prompts, Skills, Sitzungen und Nutzung
+- Unterstuetzung fuer Windows, macOS und Linux
+
+## Downloads
+
+Installationspakete fuer alle Plattformen stehen unter [GitHub Releases](https://github.com/sialrty/ModelDock/releases) bereit.
+
+## Exklusiver Sponsor
+
+[FlareDeep](https://flaredeep.cn) ist der exklusive Sponsor von ModelDock und bietet ein AI API Gateway mit nativen Upstream-Modellen, transparentem Routing und klarer Abrechnung.
+
+## Entwicklung
+
+Voraussetzungen: Node.js, pnpm 10+, Rust 1.85+ und die plattformspezifischen Tauri-Abhaengigkeiten.
+
+```bash
+pnpm install
+pnpm dev
+pnpm typecheck
+pnpm test:unit
+pnpm build
+```
+
+## Lizenz
+
+ModelDock wird unter der MIT License vertrieben. Die urspruenglichen Urheberrechts- und Lizenzhinweise bleiben in [LICENSE](LICENSE) erhalten.

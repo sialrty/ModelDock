@@ -10,7 +10,13 @@ ModelDock 是一个跨平台桌面配置管理工具，支持 Claude Code、Clau
 - MCP、提示词、Skills、会话与用量管理
 - 基于 Tauri 2，支持 Windows、macOS 和 Linux
 
-此版本不展示合作推广内容，不在应用内跳转原项目网站，也不包含应用自身的自动更新功能。供应商预设和正常配置功能仍然保留。
+## 下载
+
+前往 [GitHub Releases](https://github.com/sialrty/ModelDock/releases) 下载 Windows、macOS 和 Linux 安装包。
+
+## 唯一赞助商
+
+[FlareDeep](https://flaredeep.cn) 是 ModelDock 的唯一赞助商，提供坚持原生上游、如实路由和透明计费的 AI API Gateway 服务。
 
 ## 开发
 
