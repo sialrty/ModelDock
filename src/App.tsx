@@ -25,6 +25,7 @@ import {
   Shield,
   Cpu,
   LayoutDashboard,
+  ExternalLink,
 } from "lucide-react";
 import { getCurrentWindow } from "@tauri-apps/api/window";
 import type { Provider, VisibleApps } from "@/types";
@@ -974,6 +975,31 @@ function App() {
                     transition={{ duration: 0.15 }}
                     className="space-y-4"
                   >
+                    <button
+                      type="button"
+                      onClick={() =>
+                        void handleOpenWebsite("https://flaredeep.cn")
+                      }
+                      className="group flex w-full items-center gap-3 rounded-lg border border-teal-500/30 bg-teal-500/10 px-4 py-3 text-left transition-colors hover:border-teal-500/50 hover:bg-teal-500/15"
+                    >
+                      <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-md bg-teal-500 text-base font-bold text-white shadow-sm">
+                        F
+                      </span>
+                      <span className="min-w-0 flex-1">
+                        <span className="flex flex-wrap items-baseline gap-x-2">
+                          <span className="font-semibold text-foreground">
+                            FlareDeep
+                          </span>
+                          <span className="text-xs font-medium text-teal-700 dark:text-teal-300">
+                            {t("settings.exclusiveSponsor")}
+                          </span>
+                        </span>
+                        <span className="mt-0.5 block text-xs text-muted-foreground">
+                          {t("settings.sponsorDescription")}
+                        </span>
+                      </span>
+                      <ExternalLink className="h-4 w-4 shrink-0 text-teal-700 transition-transform group-hover:translate-x-0.5 dark:text-teal-300" />
+                    </button>
                     <ProviderList
                       providers={providers}
                       currentProviderId={currentProviderId}

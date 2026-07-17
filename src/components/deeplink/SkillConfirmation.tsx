@@ -1,4 +1,5 @@
 import { useTranslation } from "react-i18next";
+import { Info } from "lucide-react";
 import { DeepLinkImportRequest } from "../../lib/api/deeplink";
 
 export function SkillConfirmation({
@@ -37,9 +38,12 @@ export function SkillConfirmation({
         <div className="mt-1 text-sm">{request.branch || "main"}</div>
       </div>
 
-      <div className="text-blue-600 dark:text-blue-400 text-sm bg-blue-50 dark:bg-blue-950/30 p-3 rounded border border-blue-200 dark:border-blue-800">
-        <p>ℹ️ {t("deeplink.skill.hint")}</p>
-        <p className="mt-1">{t("deeplink.skill.hintDetail")}</p>
+      <div className="flex gap-2 text-blue-600 dark:text-blue-400 text-sm bg-blue-50 dark:bg-blue-950/30 p-3 rounded border border-blue-200 dark:border-blue-800">
+        <Info className="mt-0.5 h-4 w-4 shrink-0" />
+        <div>
+          <p>{t("deeplink.skill.hint")}</p>
+          <p className="mt-1">{t("deeplink.skill.hintDetail")}</p>
+        </div>
       </div>
     </div>
   );

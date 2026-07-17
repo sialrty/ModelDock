@@ -1,6 +1,6 @@
 import { useCallback, useState } from "react";
 import { useTranslation } from "react-i18next";
-import { Plus } from "lucide-react";
+import { Lightbulb, Plus } from "lucide-react";
 import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -306,8 +306,9 @@ export function AddProviderDialog({
   const footer =
     !showUniversalTab || activeTab === "app-specific" ? (
       <>
-        <span className="mr-auto min-w-0 text-xs text-muted-foreground truncate">
-          {t("provider.addFooterHint")}
+        <span className="mr-auto flex min-w-0 items-center gap-1.5 text-xs text-muted-foreground">
+          <Lightbulb className="h-3.5 w-3.5 shrink-0" />
+          <span className="truncate">{t("provider.addFooterHint")}</span>
         </span>
         <Button
           variant="outline"

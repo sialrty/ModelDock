@@ -5,6 +5,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { useUsageSummaryByApp } from "@/lib/query/usage";
 import { cn } from "@/lib/utils";
 import { APP_ICON_MAP } from "@/config/appConfig";
+import appIcon from "@/assets/icons/app-icon.png";
 import type { AppId } from "@/lib/api/types";
 import {
   Activity,
@@ -14,7 +15,6 @@ import {
   Info,
   Loader2,
   Sparkles,
-  Zap,
 } from "lucide-react";
 import {
   fmtUsd,
@@ -138,24 +138,18 @@ function deriveCacheWriteState(appTypes: string[]): CacheWriteState {
 }
 
 /**
- * Hero 标题图标：选中具体应用时显示该应用的品牌图标，"全部"时回退到通用闪电。
+ * Hero 标题图标：选中具体应用时显示该应用的品牌图标，"全部"时显示 ModelDock。
  * 复用 APP_ICON_MAP（与侧边栏 / 应用切换器同一套图标），用 cloneElement 放大到
  * 与原闪电一致的 20px；品牌图标自带配色，外层方块仍按 titleTheme 主题色着色。
  */
-function AppGlyph({
-  appType,
-  accentClass,
-}: {
-  appType?: string;
-  accentClass: string;
-}) {
+function AppGlyph({ appType }: { appType?: string }) {
   if (appType && appType in APP_ICON_MAP) {
     const base = APP_ICON_MAP[appType as AppId].icon;
     if (isValidElement<{ size?: number }>(base)) {
       return cloneElement(base, { size: 20 });
     }
   }
-  return <Zap className={cn("h-5 w-5", accentClass)} />;
+  return <img src={appIcon} alt="" className="h-5 w-5" />;
 }
 
 export function UsageHero({
@@ -251,7 +245,7 @@ export function UsageHero({
                     titleTheme.iconBg,
                   )}
                 >
-                  <AppGlyph appType={appType} accentClass={titleTheme.accent} />
+                  <AppGlyph appType={appType} />
                 </div>
                 <div>
                   <div className="text-xs font-medium text-muted-foreground flex items-center gap-1.5 mb-0.5">

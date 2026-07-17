@@ -1199,13 +1199,16 @@ export function OmoFormFields({
         </div>
       </div>
 
-      <div className="text-xs text-muted-foreground">
-        {t("omo.configSummary", {
-          agents: configuredAgentCount,
-          categories: configuredCategoryCount,
-          defaultValue:
-            "{{agents}} agents, {{categories}} categories configured · Click ⚙ for advanced params",
-        })}
+      <div className="flex flex-wrap items-center gap-1 text-xs text-muted-foreground">
+        <Settings className="h-3.5 w-3.5 shrink-0" />
+        <span>
+          {t("omo.configSummary", {
+            agents: configuredAgentCount,
+            categories: configuredCategoryCount,
+            defaultValue:
+              "{{agents}} agents, {{categories}} categories configured · Advanced params",
+          })}
+        </span>
         <span className="ml-1">
           ·{" "}
           {t("omo.enabledModelsCount", {

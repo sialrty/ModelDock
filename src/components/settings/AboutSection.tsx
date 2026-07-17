@@ -11,7 +11,6 @@ import {
   ArrowUpCircle,
   ChevronDown,
   Stethoscope,
-  ExternalLink,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
@@ -205,14 +204,6 @@ function mergeToolVersions(
 export function AboutSection({ isPortable }: AboutSectionProps) {
   // ... (use hooks as before) ...
   const { t } = useTranslation();
-  const openSponsor = useCallback(async () => {
-    try {
-      await settingsApi.openExternal("https://flaredeep.cn");
-    } catch (error) {
-      console.error("[AboutSection] Failed to open sponsor website", error);
-      toast.error(t("common.openLinkFailed"));
-    }
-  }, [t]);
   // 惰性初始化自模块缓存：重挂时首帧即渲染上次的值，避免 loading 闪烁；首次挂载缓存
   // 为空则回退到原始初值（null / loading）。
   const [version, setVersion] = useState<string | null>(() => appVersionCache);
@@ -781,34 +772,6 @@ export function AboutSection({ isPortable }: AboutSectionProps) {
           </div>
         </div>
       </motion.div>
-
-      <motion.button
-        type="button"
-        initial={{ opacity: 0, y: 8 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.3, delay: 0.15 }}
-        className="group flex w-full flex-col gap-4 rounded-lg border border-teal-500/30 bg-teal-500/10 px-5 py-4 text-left transition-colors hover:border-teal-500/50 hover:bg-teal-500/15 sm:flex-row sm:items-center"
-        onClick={() => void openSponsor()}
-      >
-        <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-teal-500 text-xl font-bold text-white shadow-sm">
-          F
-        </span>
-        <span className="min-w-0 flex-1">
-          <span className="block text-xs font-semibold text-teal-700 dark:text-teal-300">
-            {t("settings.exclusiveSponsor")}
-          </span>
-          <span className="mt-0.5 block text-lg font-semibold text-foreground">
-            FlareDeep
-          </span>
-          <span className="mt-1 block text-xs leading-relaxed text-muted-foreground">
-            {t("settings.sponsorDescription")}
-          </span>
-        </span>
-        <span className="flex shrink-0 items-center gap-1.5 text-xs font-medium text-teal-700 dark:text-teal-300">
-          {t("settings.visitSponsor")}
-          <ExternalLink className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
-        </span>
-      </motion.button>
 
       <div className="space-y-3">
         <div className="flex flex-col gap-2 px-1 sm:flex-row sm:items-center sm:justify-between">

@@ -172,6 +172,7 @@ describe("App integration with MSW", () => {
         "claude-1",
       ),
     );
+    expect(screen.getByText("FlareDeep")).toBeInTheDocument();
 
     fireEvent.click(screen.getByText("switch-codex"));
     await waitFor(() =>

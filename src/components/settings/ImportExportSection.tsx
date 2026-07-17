@@ -2,6 +2,7 @@ import { useMemo } from "react";
 import {
   AlertCircle,
   CheckCircle2,
+  FileText,
   FolderOpen,
   Loader2,
   Save,
@@ -82,8 +83,9 @@ export function ImportExportSection({
               </div>
               {selectedFile && !isImporting && (
                 <div className="mt-2 w-full text-left">
-                  <p className="text-xs font-mono text-white/80 truncate">
-                    📄 {selectedFileName}
+                  <p className="flex min-w-0 items-center gap-1 text-xs font-mono text-white/80">
+                    <FileText className="h-3.5 w-3.5 shrink-0" />
+                    <span className="min-w-0 truncate">{selectedFileName}</span>
                   </p>
                 </div>
               )}

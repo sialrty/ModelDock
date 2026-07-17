@@ -1,4 +1,5 @@
 import { useMemo } from "react";
+import { TriangleAlert } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { DeepLinkImportRequest } from "../../lib/api/deeplink";
 import { decodeBase64Utf8 } from "../../lib/utils/base64";
@@ -54,7 +55,7 @@ export function PromptConfirmation({
 
       {request.enabled && (
         <div className="text-yellow-600 dark:text-yellow-500 text-sm flex items-center gap-2">
-          <span>⚠️</span>
+          <TriangleAlert className="h-4 w-4 shrink-0" />
           <span>{t("deeplink.prompt.enabledWarning")}</span>
         </div>
       )}

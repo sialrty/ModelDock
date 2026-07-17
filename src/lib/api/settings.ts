@@ -1,4 +1,4 @@
-import { invoke } from "@tauri-apps/api/core";
+import { invoke, isTauri } from "@tauri-apps/api/core";
 import type {
   Settings,
   WebDavSyncSettings,
@@ -214,7 +214,11 @@ export const settingsApi = {
     } catch {
       throw new Error("Invalid URL");
     }
-    await invoke("open_external", { url });
+    if (isTauri()) {
+      await invoke("open_external", { url });
+    } else {
+      window.open(url, "_blank", "noopener,noreferrer");
+    }
   },
 
   async setAutoLaunch(enabled: boolean): Promise<boolean> {

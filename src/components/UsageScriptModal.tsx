@@ -1,5 +1,13 @@
 import React, { useState } from "react";
-import { Play, Wand2, Eye, EyeOff, Save, ExternalLink } from "lucide-react";
+import {
+  Play,
+  Wand2,
+  Eye,
+  EyeOff,
+  Save,
+  ExternalLink,
+  Lightbulb,
+} from "lucide-react";
 import { toast } from "sonner";
 import { useTranslation } from "react-i18next";
 import { useQueryClient } from "@tanstack/react-query";
@@ -1577,7 +1585,10 @@ const UsageScriptModal: React.FC<UsageScriptModalProps> = ({
                 </div>
 
                 <div className="text-muted-foreground">
-                  <strong>{t("usageScript.tips")}</strong>
+                  <strong className="flex items-center gap-1">
+                    <Lightbulb className="h-3.5 w-3.5" />
+                    {t("usageScript.tips")}
+                  </strong>
                   <ul className="mt-1 space-y-0.5 ml-2">
                     <li>
                       {t("usageScript.tip1", {

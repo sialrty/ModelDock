@@ -17,6 +17,7 @@ import { PromptConfirmation } from "./deeplink/PromptConfirmation";
 import { McpConfirmation } from "./deeplink/McpConfirmation";
 import { SkillConfirmation } from "./deeplink/SkillConfirmation";
 import { ProviderIcon } from "./ProviderIcon";
+import { Circle, CornerDownRight } from "lucide-react";
 
 interface DeeplinkError {
   url: string;
@@ -394,12 +395,16 @@ export function DeepLinkImportDialog() {
                       {request.endpoint?.split(",").map((ep, idx) => (
                         <div
                           key={idx}
-                          className={
+                          className={`flex items-start gap-1.5 ${
                             idx === 0 ? "font-medium" : "text-muted-foreground"
-                          }
+                          }`}
                         >
-                          {idx === 0 ? "🔹 " : "└ "}
-                          {ep.trim()}
+                          {idx === 0 ? (
+                            <Circle className="mt-1.5 h-2 w-2 shrink-0 fill-current" />
+                          ) : (
+                            <CornerDownRight className="mt-0.5 h-3.5 w-3.5 shrink-0" />
+                          )}
+                          <span>{ep.trim()}</span>
                           {idx === 0 && request.endpoint?.includes(",") && (
                             <span className="text-xs text-muted-foreground ml-2">
                               ({t("deeplink.primaryEndpoint")})

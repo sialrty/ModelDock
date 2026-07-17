@@ -1,5 +1,5 @@
 import React from "react";
-import { RefreshCw, AlertCircle, Clock } from "lucide-react";
+import { RefreshCw, AlertCircle, CircleDollarSign, Clock } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { type AppId } from "@/lib/api";
 import { useUsageQuery } from "@/lib/query/queries";
@@ -172,8 +172,9 @@ const UsageFooter: React.FC<UsageFooterProps> = ({
             return (
               <>
                 {planLabel && (
-                  <span className="font-semibold text-muted-foreground">
-                    💰 {planLabel}
+                  <span className="inline-flex items-center gap-1 font-semibold text-muted-foreground">
+                    <CircleDollarSign className="h-3.5 w-3.5" />
+                    {planLabel}
                   </span>
                 )}
                 {tiers.map((tier, index) => (
@@ -338,10 +339,11 @@ const UsagePlanItem: React.FC<{ data: UsageData }> = ({ data }) => {
       >
         {planName ? (
           <span
-            className={`font-medium truncate block ${isExpired ? "text-red-500 dark:text-red-400" : ""}`}
+            className={`flex min-w-0 items-center gap-1 font-medium ${isExpired ? "text-red-500 dark:text-red-400" : ""}`}
             title={planName}
           >
-            💰 {planName}
+            <CircleDollarSign className="h-3.5 w-3.5 shrink-0" />
+            <span className="truncate">{planName}</span>
           </span>
         ) : (
           <span className="opacity-50">—</span>

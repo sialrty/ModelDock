@@ -1,4 +1,5 @@
 import React from "react";
+import { Check } from "lucide-react";
 import {
   Tooltip,
   TooltipContent,
@@ -37,9 +38,9 @@ export const AppToggleGroup: React.FC<AppToggleGroupProps> = ({
               </button>
             </TooltipTrigger>
             <TooltipContent side="bottom">
-              <p>
+              <p className="flex items-center gap-1">
                 {label}
-                {enabled ? " ✓" : ""}
+                {enabled && <Check className="h-3.5 w-3.5" />}
               </p>
             </TooltipContent>
           </Tooltip>

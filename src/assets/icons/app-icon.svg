@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
+  <title>ModelDock</title>
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="152">
+    <path d="M220 770V258" stroke="#1EA69A" />
+    <path d="M220 258 512 642" stroke="#F36F56" />
+    <path d="m512 642 292-384" stroke="#F2C14E" />
+    <path d="M804 258v512" stroke="#252A31" />
+  </g>
+  <circle cx="512" cy="642" r="44" fill="#252A31" />
+</svg>

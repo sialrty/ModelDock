@@ -2,7 +2,7 @@ import { useTranslation } from "react-i18next";
 import { FormLabel } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Switch } from "@/components/ui/switch";
-import { Link2, Zap } from "lucide-react";
+import { Lightbulb, Link2, Zap } from "lucide-react";
 
 interface EndpointFieldProps {
   id: string;
@@ -45,7 +45,7 @@ export function EndpointField({
       ? fullUrlHint ||
         t("providerForm.fullUrlHint", {
           defaultValue:
-            "💡 请填写完整请求 URL，并且必须开启代理后使用；代理将直接使用此 URL，不拼接路径",
+            "请填写完整请求 URL，并且必须开启代理后使用；代理将直接使用此 URL，不拼接路径",
         })
       : hint;
 
@@ -102,8 +102,9 @@ export function EndpointField({
       />
       {effectiveHint ? (
         <div className="p-3 bg-amber-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-700 rounded-lg">
-          <p className="text-xs text-amber-600 dark:text-amber-400">
-            {effectiveHint}
+          <p className="flex items-start gap-1.5 text-xs text-amber-600 dark:text-amber-400">
+            <Lightbulb className="mt-0.5 h-3.5 w-3.5 shrink-0" />
+            <span>{effectiveHint}</span>
           </p>
         </div>
       ) : null}
