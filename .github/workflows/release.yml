@@ -331,12 +331,19 @@ jobs:
           set -euo pipefail
           ls -la release-assets
 
+      - name: Remove superseded v3.17.1 release
+        if: github.ref_name == 'v3.17.0'
+        run: gh release delete v3.17.1 --cleanup-tag --yes --repo "$GITHUB_REPOSITORY" || true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Upload Release Assets
         uses: softprops/action-gh-release@v3
         with:
           tag_name: ${{ github.ref_name }}
           name: ModelDock ${{ github.ref_name }}
           prerelease: false
+          overwrite_files: true
           body: |
             ## ModelDock ${{ github.ref_name }}
 

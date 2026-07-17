@@ -758,7 +758,7 @@ dependencies = [
 
 [[package]]
 name = "modeldock"
-version = "3.17.1"
+version = "3.17.0"
 dependencies = [
  "anyhow",
  "arboard",
